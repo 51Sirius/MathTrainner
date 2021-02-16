@@ -6,7 +6,6 @@ import pyperclip
 import time
 import sys
 
-
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 
 
@@ -68,7 +67,6 @@ def output_settings():
     lg.write(str(LANG))
     lg.close
     sys.exit()
-
 
 
 def size_upload(size):
@@ -538,7 +536,7 @@ def start_play_rus():
                         draw_notok = True
                         draw_time_nok = 1
             else:
-                h+=1
+                h += 1
         need_generaite = False
         pg.time.wait(1)
 
@@ -952,15 +950,17 @@ def menu_display_settings_rus():
 
 def any_game_menu_rus():
     show_menu_any_game = True
-    text = Font(int(__SIZE[0]/(800/315)),int(__SIZE[1]/(600/40)),MAIN_COLOR_FONT,int(__SIZE[1]/(600/40)),message='Другое')
-    yes_or_no = Button_rect(int(__SIZE[0] / 2 - (__SIZE[0] / 4)), int(__SIZE[1] / (600 / 300)), int(__SIZE[0] / (800/400)),
-                           int(__SIZE[1] / 12), COLOR_SETUP_MENU_1, 'Правда ложь',
-                           font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
-                           actived_color=MAIN_COLOR_FONT,
-                           font_size=int(__SIZE[1] / 24),
-                           message_x=int(int(__SIZE[0] / 2 - (__SIZE[0] / 4) + (__SIZE[0] / (800 / 95)))),
-                           message_y=int(__SIZE[1] / (600 / 315)),
-                           second_color=COLOR_BUTTON_2)
+    text = Font(int(__SIZE[0] / (800 / 315)), int(__SIZE[1] / (600 / 40)), MAIN_COLOR_FONT, int(__SIZE[1] / (600 / 40)),
+                message='Другое')
+    yes_or_no = Button_rect(int(__SIZE[0] / 2 - (__SIZE[0] / 4)), int(__SIZE[1] / (600 / 300)),
+                            int(__SIZE[0] / (800 / 400)),
+                            int(__SIZE[1] / 12), COLOR_SETUP_MENU_1, 'Правда ложь',
+                            font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
+                            actived_color=MAIN_COLOR_FONT,
+                            font_size=int(__SIZE[1] / 24),
+                            message_x=int(int(__SIZE[0] / 2 - (__SIZE[0] / 4) + (__SIZE[0] / (800 / 95)))),
+                            message_y=int(__SIZE[1] / (600 / 315)),
+                            second_color=COLOR_BUTTON_2)
     while show_menu_any_game:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -984,14 +984,18 @@ def yes_or_no_rus():
     flag = 1
     show_menu_y_r = True
     h = 0
-    play_button = New_button(int(__SIZE[0]/(800/250)),int(__SIZE[1]/(600/300)),int(__SIZE[0]/(800/300)),
-                             int(__SIZE[1]/(600/80)),'Играть',(0, 0, 0), int(__SIZE[1]/(600/36)), active_color=ACTIVE_COLOR,
-                             message_x=int(__SIZE[0]/(800/320)), message_y=int(__SIZE[1]/(600/320)), sukam=int(__SIZE[0]/(800/10)))
-    rule_button = New_button(int(__SIZE[0]/(800/250)), int(__SIZE[1]/(600/450)), int(__SIZE[0]/(800/300)),
-                             int(__SIZE[1]/(600/80)), 'Правила', (0, 0, 0), int(__SIZE[1]/(600/36)), active_color=ACTIVE_COLOR,
-                             message_x=int(__SIZE[0]/(800/347)),
-                             message_y=int(__SIZE[1]/(600/470)), sukam=int(__SIZE[0]/(800/10)))
-    main_text = Font(int(__SIZE[0]/(800/213)),int(__SIZE[1]/(600/100)),font_size=int(__SIZE[1]/(600/46)),message='Правда ложь')
+    play_button = New_button(int(__SIZE[0] / (800 / 250)), int(__SIZE[1] / (600 / 300)), int(__SIZE[0] / (800 / 300)),
+                             int(__SIZE[1] / (600 / 80)), 'Играть', (0, 0, 0), int(__SIZE[1] / (600 / 36)),
+                             active_color=ACTIVE_COLOR,
+                             message_x=int(__SIZE[0] / (800 / 320)), message_y=int(__SIZE[1] / (600 / 320)),
+                             sukam=int(__SIZE[0] / (800 / 10)))
+    rule_button = New_button(int(__SIZE[0] / (800 / 250)), int(__SIZE[1] / (600 / 450)), int(__SIZE[0] / (800 / 300)),
+                             int(__SIZE[1] / (600 / 80)), 'Правила', (0, 0, 0), int(__SIZE[1] / (600 / 36)),
+                             active_color=ACTIVE_COLOR,
+                             message_x=int(__SIZE[0] / (800 / 347)),
+                             message_y=int(__SIZE[1] / (600 / 470)), sukam=int(__SIZE[0] / (800 / 10)))
+    main_text = Font(int(__SIZE[0] / (800 / 213)), int(__SIZE[1] / (600 / 100)), font_size=int(__SIZE[1] / (600 / 46)),
+                     message='Правда ложь')
     while show_menu_y_r:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -1030,7 +1034,7 @@ def yes_or_no_rus():
             flag = 0
         flag += 1
         if play_button.action:
-            h+=1
+            h += 1
             if h == 4:
                 pg.time.wait(50)
                 true_or_false_play_rus()
@@ -1064,19 +1068,24 @@ def start_play_T_F_r():
         display.fill((15, 0, 176))
         flag += 1
         if flag > 1 and flag < 1000:
-            font = Font(int(__SIZE[0]/(800/200)), int(__SIZE[1]/(600/200)), (0, 251, 255), int(__SIZE[1]/(600/50)), message='Начинаем ...')
+            font = Font(int(__SIZE[0] / (800 / 200)), int(__SIZE[1] / (600 / 200)), (0, 251, 255),
+                        int(__SIZE[1] / (600 / 50)), message='Начинаем ...')
             font.draw_text()
         elif flag > 1000 and flag < 1700:
-            font = Font(int(__SIZE[0]/(800/350)), int(__SIZE[1]/(600/220)), (0, 251, 255), int(__SIZE[1]/(600/120)), message='3')
+            font = Font(int(__SIZE[0] / (800 / 350)), int(__SIZE[1] / (600 / 220)), (0, 251, 255),
+                        int(__SIZE[1] / (600 / 120)), message='3')
             font.draw_text()
         elif flag > 1700 and flag < 2400:
-            font = Font(int(__SIZE[0]/(800/350)), int(__SIZE[1]/(600/220)), (0, 251, 255), int(__SIZE[1]/(600/120)), message='2')
+            font = Font(int(__SIZE[0] / (800 / 350)), int(__SIZE[1] / (600 / 220)), (0, 251, 255),
+                        int(__SIZE[1] / (600 / 120)), message='2')
             font.draw_text()
         elif flag > 2400 and flag < 3100:
-            font = Font(int(__SIZE[0]/(800/350)), int(__SIZE[1]/(600/220)), (0, 251, 255), int(__SIZE[1]/(600/120)), message='1')
+            font = Font(int(__SIZE[0] / (800 / 350)), int(__SIZE[1] / (600 / 220)), (0, 251, 255),
+                        int(__SIZE[1] / (600 / 120)), message='1')
             font.draw_text()
         elif flag > 3100 and flag < 4000:
-            font = Font(int(__SIZE[0]/(800/220)), int(__SIZE[1]/(600/200)), (0, 251, 255), int(__SIZE[1]/(600/80)), message='Старт!!!')
+            font = Font(int(__SIZE[0] / (800 / 220)), int(__SIZE[1] / (600 / 200)), (0, 251, 255),
+                        int(__SIZE[1] / (600 / 80)), message='Старт!!!')
             font.draw_text()
         pg.display.update()
         if flag == 4000:
@@ -1089,31 +1098,35 @@ def playing_start_T_F_r():
     flag = 1500
     n = 1500
     button_true = Button_rect(int(__SIZE[0] / 2 - (__SIZE[0] / 3)), int(__SIZE[1] / (800 / 400)), int(__SIZE[0] / 4),
-                                 int(__SIZE[1] / 6), (255, 206, 0), 'Правда',
-                                 font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
-                                 actived_color=MAIN_COLOR_FONT,
-                                 font_size=int(__SIZE[1] / (600/32)),
-                                 message_x=int(int(__SIZE[0] / 2 - (__SIZE[0] / 3) + __SIZE[0]/(800/20))),
-                                 message_y=int(__SIZE[1] / (800 / 440)), second_color=(255, 164, 0))
-    button_false = Button_rect(int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4), int(__SIZE[1] / (800 / 400)), int(__SIZE[0] / 4),
-                                 int(__SIZE[1] / 6), (255, 206, 0), 'Ложь',
-                                 font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
-                                 actived_color=MAIN_COLOR_FONT,
-                                 font_size=int(__SIZE[1] / (600/32)),
-                                 message_x=int(int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4 + __SIZE[0]/(800/45))),
-                                 message_y=int(__SIZE[1] / (800 / 440)), second_color=(255, 164, 0))
-    score_txt = Font(int(__SIZE[0]/(800/600)),int(__SIZE[1]/(600/10)),message=f'Счёт: {score}',font_size=int(__SIZE[1]/(600/26)),font_color=COLOR_VERSION_SCORE)
-    reccord_txt = Font(int(__SIZE[0]/(800/15)),int(__SIZE[1]/(600/10)),message=f'Рекорд: {RECORD}',font_size=int(__SIZE[1]/(600/26)),font_color=COLOR_VERSION_SCORE)
+                              int(__SIZE[1] / 6), (255, 206, 0), 'Правда',
+                              font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
+                              actived_color=MAIN_COLOR_FONT,
+                              font_size=int(__SIZE[1] / (600 / 32)),
+                              message_x=int(int(__SIZE[0] / 2 - (__SIZE[0] / 3) + __SIZE[0] / (800 / 20))),
+                              message_y=int(__SIZE[1] / (800 / 440)), second_color=(255, 164, 0))
+    button_false = Button_rect(int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4), int(__SIZE[1] / (800 / 400)),
+                               int(__SIZE[0] / 4),
+                               int(__SIZE[1] / 6), (255, 206, 0), 'Ложь',
+                               font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
+                               actived_color=MAIN_COLOR_FONT,
+                               font_size=int(__SIZE[1] / (600 / 32)),
+                               message_x=int(
+                                   int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4 + __SIZE[0] / (800 / 45))),
+                               message_y=int(__SIZE[1] / (800 / 440)), second_color=(255, 164, 0))
+    score_txt = Font(int(__SIZE[0] / (800 / 600)), int(__SIZE[1] / (600 / 10)), message=f'Счёт: {score}',
+                     font_size=int(__SIZE[1] / (600 / 26)), font_color=COLOR_VERSION_SCORE)
+    reccord_txt = Font(int(__SIZE[0] / (800 / 15)), int(__SIZE[1] / (600 / 10)), message=f'Рекорд: {RECORD}',
+                       font_size=int(__SIZE[1] / (600 / 26)), font_color=COLOR_VERSION_SCORE)
     yes = False
     t, ex = generate()
-    ex.font_size = int(__SIZE[1]/(600/46))
+    ex.font_size = int(__SIZE[1] / (600 / 46))
     ex.font_color = COLOR_VERSION_SCORE
     while show_menu_y_r:
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 output_settings()
         display.fill((15, 0, 176))
-        pg.draw.line(display,(0,255,0),[0,590],[int(__SIZE[0]*flag/n),590],int(__SIZE[1]/(600/14)))
+        pg.draw.line(display, (0, 255, 0), [0, 590], [int(__SIZE[0] * flag / n), 590], int(__SIZE[1] / (600 / 14)))
         score_txt.draw_text()
         reccord_txt.draw_text()
         button_true.draw()
@@ -1134,10 +1147,10 @@ def playing_start_T_F_r():
         if yes:
             score += 1
             score_txt.message = f'Счёт: {score}'
-            n = 1500 - score*10
+            n = 1500 - score * 10
             flag = n
             t, ex = generate()
-            ex.font_size = int(__SIZE[1]/(600/40))
+            ex.font_size = int(__SIZE[1] / (600 / 40))
             ex.font_color = COLOR_VERSION_SCORE
             yes = False
             pg.time.wait(150)
@@ -1152,20 +1165,23 @@ def retry_rus():
     go = False
     h = 0
     button_yes = Button_rect(int(__SIZE[0] / 2 - (__SIZE[0] / 3)), int(__SIZE[1] / (800 / 300)), int(__SIZE[0] / 4),
-                                 int(__SIZE[1] / 6), (255, 206, 0), 'Да',
-                                 font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
-                                 actived_color=MAIN_COLOR_FONT,
-                                 font_size=int(__SIZE[1] / (600/32)),
-                                 message_x=int(int(__SIZE[0] / 2 - (__SIZE[0] / 3) + __SIZE[0]/(800/45))),
-                                 message_y=int(__SIZE[1] / (800 / 340)), second_color=(255, 164, 0))
-    button_not = Button_rect(int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4), int(__SIZE[1] / (800 / 300)), int(__SIZE[0] / 4),
-                                 int(__SIZE[1] / 6), (255, 206, 0), 'Нет',
-                                 font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
-                                 actived_color=MAIN_COLOR_FONT,
-                                 font_size=int(__SIZE[1] / (600/32)),
-                                 message_x=int(int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4 + __SIZE[0]/(800/45))),
-                                 message_y=int(__SIZE[1] / (800 / 340)), second_color=(255, 164, 0))
-    quest = Font(int(__SIZE[0]/(800/150)),int(__SIZE[1]/(600/50)),COLOR_VERSION_SCORE,int(__SIZE[1]/(600/44)),message='Хотите повторить?')
+                             int(__SIZE[1] / 6), (255, 206, 0), 'Да',
+                             font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
+                             actived_color=MAIN_COLOR_FONT,
+                             font_size=int(__SIZE[1] / (600 / 32)),
+                             message_x=int(int(__SIZE[0] / 2 - (__SIZE[0] / 3) + __SIZE[0] / (800 / 45))),
+                             message_y=int(__SIZE[1] / (800 / 340)), second_color=(255, 164, 0))
+    button_not = Button_rect(int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4), int(__SIZE[1] / (800 / 300)),
+                             int(__SIZE[0] / 4),
+                             int(__SIZE[1] / 6), (255, 206, 0), 'Нет',
+                             font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
+                             actived_color=MAIN_COLOR_FONT,
+                             font_size=int(__SIZE[1] / (600 / 32)),
+                             message_x=int(
+                                 int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4 + __SIZE[0] / (800 / 45))),
+                             message_y=int(__SIZE[1] / (800 / 340)), second_color=(255, 164, 0))
+    quest = Font(int(__SIZE[0] / (800 / 150)), int(__SIZE[1] / (600 / 50)), COLOR_VERSION_SCORE,
+                 int(__SIZE[1] / (600 / 44)), message='Хотите повторить?')
     while show_menu_retry:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -1711,7 +1727,7 @@ class Example:
                 numb_one_o = str(rand.randint(2, 10))
                 numb_one_t = str(rand.randint(10, 100))
                 numb_two = float(numb_one_o + '.' + numb_one_t)
-                if numb_one - numb_two > 0 and len(str(numb_one - numb_two)) < 10 and float(numb_one_t_1*10) > float(
+                if numb_one - numb_two > 0 and len(str(numb_one - numb_two)) < 10 and float(numb_one_t_1 * 10) > float(
                         numb_one_t):
                     ready = True
             self.result = numb_one - numb_two
@@ -2269,10 +2285,11 @@ def start_play():
     need_generaite = True
     examp = Example(__SIZE)
     button_answer = Button_rect(int(__SIZE[0] / (800 / 250)), int(__SIZE[1] / (800 / 650)),
-                                 int(__SIZE[0] / (800 / 300)),
-                                 int(__SIZE[1] / (800 / 60)),COLOR_BUTTON_1,'Answer',(0,0,0),int(__SIZE[1]/(600/30)),
-                                'shrift\math_prem1.ttf',(0,0,0),(0,0,0),int(__SIZE[0] / (800 / 330)),
-                                int(__SIZE[1] / (800 / 660)),COLOR_BUTTON_2)
+                                int(__SIZE[0] / (800 / 300)),
+                                int(__SIZE[1] / (800 / 60)), COLOR_BUTTON_1, 'Answer', (0, 0, 0),
+                                int(__SIZE[1] / (600 / 30)),
+                                'shrift\math_prem1.ttf', (0, 0, 0), (0, 0, 0), int(__SIZE[0] / (800 / 330)),
+                                int(__SIZE[1] / (800 / 660)), COLOR_BUTTON_2)
     while show_play:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -2363,7 +2380,7 @@ def start_play():
                         draw_time_nok = 1
                 h = 0
             else:
-                h+=1
+                h += 1
         pg.time.wait(1)
 
 
@@ -2632,15 +2649,17 @@ def get_code_rus():
 
 def any_game_menu_eng():
     show_menu_any_game = True
-    text = Font(int(__SIZE[0]/(800/300)),int(__SIZE[1]/(600/40)),MAIN_COLOR_FONT,int(__SIZE[1]/(600/30)),message='Any Games')
-    yes_or_no = Button_rect(int(__SIZE[0] / 2 - (__SIZE[0] / 4)), int(__SIZE[1] / (600 / 300)), int(__SIZE[0] / (800/400)),
-                           int(__SIZE[1] / 12), COLOR_SETUP_MENU_1, 'True or False',
-                           font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
-                           actived_color=MAIN_COLOR_FONT,
-                           font_size=int(__SIZE[1] / 24),
-                           message_x=int(int(__SIZE[0] / 2 - (__SIZE[0] / 4) + (__SIZE[0] / (800 / 95)))),
-                           message_y=int(__SIZE[1] / (600 / 315)),
-                           second_color=COLOR_BUTTON_2)
+    text = Font(int(__SIZE[0] / (800 / 300)), int(__SIZE[1] / (600 / 40)), MAIN_COLOR_FONT, int(__SIZE[1] / (600 / 30)),
+                message='Any Games')
+    yes_or_no = Button_rect(int(__SIZE[0] / 2 - (__SIZE[0] / 4)), int(__SIZE[1] / (600 / 300)),
+                            int(__SIZE[0] / (800 / 400)),
+                            int(__SIZE[1] / 12), COLOR_SETUP_MENU_1, 'True or False',
+                            font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
+                            actived_color=MAIN_COLOR_FONT,
+                            font_size=int(__SIZE[1] / 24),
+                            message_x=int(int(__SIZE[0] / 2 - (__SIZE[0] / 4) + (__SIZE[0] / (800 / 95)))),
+                            message_y=int(__SIZE[1] / (600 / 315)),
+                            second_color=COLOR_BUTTON_2)
     while show_menu_any_game:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -2664,14 +2683,18 @@ def yes_or_no_eng():
     flag = 1
     show_menu_y_r = True
     h = 0
-    play_button = New_button(int(__SIZE[0]/(800/250)),int(__SIZE[1]/(600/300)),int(__SIZE[0]/(800/300)),
-                             int(__SIZE[1]/(600/80)),'Play',(0, 0, 0), int(__SIZE[1]/(600/36)), active_color=ACTIVE_COLOR,
-                             message_x=int(__SIZE[0]/(800/347)), message_y=int(__SIZE[1]/(600/320)), sukam=int(__SIZE[0]/(800/10)))
-    rule_button = New_button(int(__SIZE[0]/(800/250)), int(__SIZE[1]/(600/450)), int(__SIZE[0]/(800/300)),
-                             int(__SIZE[1]/(600/80)), 'Rule', (0, 0, 0), int(__SIZE[1]/(600/36)), active_color=ACTIVE_COLOR,
-                             message_x=int(__SIZE[0]/(800/347)),
-                             message_y=int(__SIZE[1]/(600/470)), sukam=int(__SIZE[0]/(800/10)))
-    main_text = Font(int(__SIZE[0]/(800/203)),int(__SIZE[1]/(600/100)),font_size=int(__SIZE[1]/(600/46)),message='True or False')
+    play_button = New_button(int(__SIZE[0] / (800 / 250)), int(__SIZE[1] / (600 / 300)), int(__SIZE[0] / (800 / 300)),
+                             int(__SIZE[1] / (600 / 80)), 'Play', (0, 0, 0), int(__SIZE[1] / (600 / 36)),
+                             active_color=ACTIVE_COLOR,
+                             message_x=int(__SIZE[0] / (800 / 347)), message_y=int(__SIZE[1] / (600 / 320)),
+                             sukam=int(__SIZE[0] / (800 / 10)))
+    rule_button = New_button(int(__SIZE[0] / (800 / 250)), int(__SIZE[1] / (600 / 450)), int(__SIZE[0] / (800 / 300)),
+                             int(__SIZE[1] / (600 / 80)), 'Rule', (0, 0, 0), int(__SIZE[1] / (600 / 36)),
+                             active_color=ACTIVE_COLOR,
+                             message_x=int(__SIZE[0] / (800 / 347)),
+                             message_y=int(__SIZE[1] / (600 / 470)), sukam=int(__SIZE[0] / (800 / 10)))
+    main_text = Font(int(__SIZE[0] / (800 / 203)), int(__SIZE[1] / (600 / 100)), font_size=int(__SIZE[1] / (600 / 46)),
+                     message='True or False')
     while show_menu_y_r:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -2710,14 +2733,13 @@ def yes_or_no_eng():
             flag = 0
         flag += 1
         if play_button.action:
-            h+=1
+            h += 1
             if h == 4:
                 pg.time.wait(50)
                 true_or_false_play_eng()
                 h = 0
         elif rule_button.action:
             pass
-
 
 
 def new_color(color_list, x):
@@ -2770,19 +2792,24 @@ def start_play_T_F():
         display.fill((15, 0, 176))
         flag += 1
         if flag > 1 and flag < 1000:
-            font = Font(int(__SIZE[0]/(800/200)), int(__SIZE[1]/(600/200)), (0, 251, 255), int(__SIZE[1]/(600/50)), message='Lets start ...')
+            font = Font(int(__SIZE[0] / (800 / 200)), int(__SIZE[1] / (600 / 200)), (0, 251, 255),
+                        int(__SIZE[1] / (600 / 50)), message='Lets start ...')
             font.draw_text()
         elif flag > 1000 and flag < 1700:
-            font = Font(int(__SIZE[0]/(800/350)), int(__SIZE[1]/(600/220)), (0, 251, 255), int(__SIZE[1]/(600/120)), message='3')
+            font = Font(int(__SIZE[0] / (800 / 350)), int(__SIZE[1] / (600 / 220)), (0, 251, 255),
+                        int(__SIZE[1] / (600 / 120)), message='3')
             font.draw_text()
         elif flag > 1700 and flag < 2400:
-            font = Font(int(__SIZE[0]/(800/350)), int(__SIZE[1]/(600/220)), (0, 251, 255), int(__SIZE[1]/(600/120)), message='2')
+            font = Font(int(__SIZE[0] / (800 / 350)), int(__SIZE[1] / (600 / 220)), (0, 251, 255),
+                        int(__SIZE[1] / (600 / 120)), message='2')
             font.draw_text()
         elif flag > 2400 and flag < 3100:
-            font = Font(int(__SIZE[0]/(800/350)), int(__SIZE[1]/(600/220)), (0, 251, 255), int(__SIZE[1]/(600/120)), message='1')
+            font = Font(int(__SIZE[0] / (800 / 350)), int(__SIZE[1] / (600 / 220)), (0, 251, 255),
+                        int(__SIZE[1] / (600 / 120)), message='1')
             font.draw_text()
         elif flag > 3100 and flag < 4000:
-            font = Font(int(__SIZE[0]/(800/220)), int(__SIZE[1]/(600/200)), (0, 251, 255), int(__SIZE[1]/(600/80)), message='Start!!!')
+            font = Font(int(__SIZE[0] / (800 / 220)), int(__SIZE[1] / (600 / 200)), (0, 251, 255),
+                        int(__SIZE[1] / (600 / 80)), message='Start!!!')
             font.draw_text()
         pg.display.update()
         if flag == 4000:
@@ -2795,31 +2822,35 @@ def playing_start_T_F():
     flag = 1500
     n = 1500
     button_true = Button_rect(int(__SIZE[0] / 2 - (__SIZE[0] / 3)), int(__SIZE[1] / (800 / 400)), int(__SIZE[0] / 4),
-                                 int(__SIZE[1] / 6), (255, 206, 0), 'True',
-                                 font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
-                                 actived_color=MAIN_COLOR_FONT,
-                                 font_size=int(__SIZE[1] / (600/32)),
-                                 message_x=int(int(__SIZE[0] / 2 - (__SIZE[0] / 3) + __SIZE[0]/(800/45))),
-                                 message_y=int(__SIZE[1] / (800 / 440)), second_color=(255, 164, 0))
-    button_false = Button_rect(int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4), int(__SIZE[1] / (800 / 400)), int(__SIZE[0] / 4),
-                                 int(__SIZE[1] / 6), (255, 206, 0), 'False',
-                                 font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
-                                 actived_color=MAIN_COLOR_FONT,
-                                 font_size=int(__SIZE[1] / (600/32)),
-                                 message_x=int(int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4 + __SIZE[0]/(800/45))),
-                                 message_y=int(__SIZE[1] / (800 / 440)), second_color=(255, 164, 0))
-    score_txt = Font(int(__SIZE[0]/(800/600)),int(__SIZE[1]/(600/10)),message=f'Score: {score}',font_size=int(__SIZE[1]/(600/26)),font_color=COLOR_VERSION_SCORE)
-    reccord_txt = Font(int(__SIZE[0]/(800/15)),int(__SIZE[1]/(600/10)),message=f'Record: {RECORD}',font_size=int(__SIZE[1]/(600/26)),font_color=COLOR_VERSION_SCORE)
+                              int(__SIZE[1] / 6), (255, 206, 0), 'True',
+                              font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
+                              actived_color=MAIN_COLOR_FONT,
+                              font_size=int(__SIZE[1] / (600 / 32)),
+                              message_x=int(int(__SIZE[0] / 2 - (__SIZE[0] / 3) + __SIZE[0] / (800 / 45))),
+                              message_y=int(__SIZE[1] / (800 / 440)), second_color=(255, 164, 0))
+    button_false = Button_rect(int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4), int(__SIZE[1] / (800 / 400)),
+                               int(__SIZE[0] / 4),
+                               int(__SIZE[1] / 6), (255, 206, 0), 'False',
+                               font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
+                               actived_color=MAIN_COLOR_FONT,
+                               font_size=int(__SIZE[1] / (600 / 32)),
+                               message_x=int(
+                                   int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4 + __SIZE[0] / (800 / 45))),
+                               message_y=int(__SIZE[1] / (800 / 440)), second_color=(255, 164, 0))
+    score_txt = Font(int(__SIZE[0] / (800 / 600)), int(__SIZE[1] / (600 / 10)), message=f'Score: {score}',
+                     font_size=int(__SIZE[1] / (600 / 26)), font_color=COLOR_VERSION_SCORE)
+    reccord_txt = Font(int(__SIZE[0] / (800 / 15)), int(__SIZE[1] / (600 / 10)), message=f'Record: {RECORD}',
+                       font_size=int(__SIZE[1] / (600 / 26)), font_color=COLOR_VERSION_SCORE)
     yes = False
     t, ex = generate()
-    ex.font_size = int(__SIZE[1]/(600/46))
+    ex.font_size = int(__SIZE[1] / (600 / 46))
     ex.font_color = COLOR_VERSION_SCORE
     while show_menu_y_r:
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 output_settings()
         display.fill((15, 0, 176))
-        pg.draw.line(display,(0,255,0),[0,590],[int(__SIZE[0]*flag/n),590],int(__SIZE[1]/(600/14)))
+        pg.draw.line(display, (0, 255, 0), [0, 590], [int(__SIZE[0] * flag / n), 590], int(__SIZE[1] / (600 / 14)))
         score_txt.draw_text()
         reccord_txt.draw_text()
         button_true.draw()
@@ -2840,10 +2871,10 @@ def playing_start_T_F():
         if yes:
             score += 1
             score_txt.message = f'Score: {score}'
-            n = 1500 - score*10
+            n = 1500 - score * 10
             flag = n
             t, ex = generate()
-            ex.font_size = int(__SIZE[1]/(600/40))
+            ex.font_size = int(__SIZE[1] / (600 / 40))
             ex.font_color = COLOR_VERSION_SCORE
             yes = False
             pg.time.wait(150)
@@ -2853,57 +2884,57 @@ def playing_start_T_F():
 
 
 def generate():
-    pain = rand.randint(1,2)
+    pain = rand.randint(1, 2)
     if pain == 1:
-        r = rand.randint(1,6)
+        r = rand.randint(1, 6)
         if r == 1:
-            a = rand.randint(1,30)
-            b = rand.randint(1,20)
+            a = rand.randint(1, 30)
+            b = rand.randint(1, 20)
             c = a + b
-            ex = Font(int(__SIZE[0]/(800/280)),int(__SIZE[1]/(600/130)),message=f'{a} + {b} = {c}')
+            ex = Font(int(__SIZE[0] / (800 / 280)), int(__SIZE[1] / (600 / 130)), message=f'{a} + {b} = {c}')
         elif r == 2:
-            a = rand.randint(20,50)
-            b = rand.randint(1,20)
+            a = rand.randint(20, 50)
+            b = rand.randint(1, 20)
             c = a - b
-            ex = Font(int(__SIZE[0]/(800/280)),int(__SIZE[1]/(600/130)),message=f'{a} - {b} = {c}')
+            ex = Font(int(__SIZE[0] / (800 / 280)), int(__SIZE[1] / (600 / 130)), message=f'{a} - {b} = {c}')
         elif r == 3:
-            a = rand.randint(1,30)
-            b = rand.randint(1,20)
+            a = rand.randint(1, 30)
+            b = rand.randint(1, 20)
             g = a + b
-            c = g + rand.randint(int(g/10),int(g/4))
+            c = g + rand.randint(int(g / 10), int(g / 4))
             if c == g:
-                c += rand.randint(1,10)
-            ex = Font(int(__SIZE[0]/(800/280)),int(__SIZE[1]/(600/130)),message=f'{a} + {b} < {c}')
+                c += rand.randint(1, 10)
+            ex = Font(int(__SIZE[0] / (800 / 280)), int(__SIZE[1] / (600 / 130)), message=f'{a} + {b} < {c}')
         elif r == 4:
-            a = rand.randint(1,30)
-            b = rand.randint(1,20)
+            a = rand.randint(1, 30)
+            b = rand.randint(1, 20)
             g = a + b
-            c = g - rand.randint(int(g/10),int(g/4))
+            c = g - rand.randint(int(g / 10), int(g / 4))
             if c == g:
-                c -= rand.randint(1,10)
-            ex = Font(int(__SIZE[0]/(800/280)),int(__SIZE[1]/(600/130)),message=f'{a} + {b} > {c}')
+                c -= rand.randint(1, 10)
+            ex = Font(int(__SIZE[0] / (800 / 280)), int(__SIZE[1] / (600 / 130)), message=f'{a} + {b} > {c}')
         elif r == 5:
-            a = rand.randint(10,40)
-            b = rand.randint(1,20)
+            a = rand.randint(10, 40)
+            b = rand.randint(1, 20)
             g = a - b
             if g >= 0:
-                c = g + rand.randint(int(g/10),int(g/4))
+                c = g + rand.randint(int(g / 10), int(g / 4))
             else:
-                c = g + rand.randint(int((g*(-1)) / 10), int((g*(-1)) / 4))
+                c = g + rand.randint(int((g * (-1)) / 10), int((g * (-1)) / 4))
             if c == g:
-                c += rand.randint(1,10)
-            ex = Font(int(__SIZE[0]/(800/280)),int(__SIZE[1]/(600/130)),message=f'{a} - {b} < {c}')
+                c += rand.randint(1, 10)
+            ex = Font(int(__SIZE[0] / (800 / 280)), int(__SIZE[1] / (600 / 130)), message=f'{a} - {b} < {c}')
         elif r == 6:
-            a = rand.randint(1,30)
-            b = rand.randint(1,20)
+            a = rand.randint(1, 30)
+            b = rand.randint(1, 20)
             g = a - b
             if g >= 0:
-                c = g - rand.randint(int(g/10),int(g/4))
+                c = g - rand.randint(int(g / 10), int(g / 4))
             else:
-                c = g - rand.randint(int((g*(-1)) / 10), int((g*(-1)) / 4))
+                c = g - rand.randint(int((g * (-1)) / 10), int((g * (-1)) / 4))
             if c == g:
-                c -= rand.randint(1,10)
-            ex = Font(int(__SIZE[0]/(800/280)),int(__SIZE[1]/(600/130)),message=f'{a} - {b} > {c}')
+                c -= rand.randint(1, 10)
+            ex = Font(int(__SIZE[0] / (800 / 280)), int(__SIZE[1] / (600 / 130)), message=f'{a} - {b} > {c}')
         return True, ex
     elif pain == 2:
         r = rand.randint(1, 6)
@@ -2911,62 +2942,62 @@ def generate():
             a = rand.randint(1, 30)
             b = rand.randint(1, 20)
             g = a + b
-            c = rand.randint(g-10,g+10)
+            c = rand.randint(g - 10, g + 10)
             if g == c:
-                c -= rand.randint(1,5)
-            ex = Font(int(__SIZE[0]/(800/280)),int(__SIZE[1]/(600/130)), message=f'{a} + {b} = {c}')
+                c -= rand.randint(1, 5)
+            ex = Font(int(__SIZE[0] / (800 / 280)), int(__SIZE[1] / (600 / 130)), message=f'{a} + {b} = {c}')
         elif r == 2:
             a = rand.randint(10, 40)
             b = rand.randint(1, 20)
             g = a - b
-            c = rand.randint(int(g - g/5),int(g + g/4))
+            c = rand.randint(int(g - g / 5), int(g + g / 4))
             if g == c:
-                c += rand.randint(1,6)
-            ex = Font(int(__SIZE[0]/(800/280)),int(__SIZE[1]/(600/130)), message=f'{a} - {b} = {c}')
+                c += rand.randint(1, 6)
+            ex = Font(int(__SIZE[0] / (800 / 280)), int(__SIZE[1] / (600 / 130)), message=f'{a} - {b} = {c}')
         elif r == 3:
             a = rand.randint(1, 30)
             b = rand.randint(1, 20)
             g = a + b
             if g >= 0:
-                c = g - rand.randint(int(g/10),int(g/4))
+                c = g - rand.randint(int(g / 10), int(g / 4))
             else:
-               c = g - rand.randint(int((g*(-1)) / 10), int((g*(-1)) / 4))
+                c = g - rand.randint(int((g * (-1)) / 10), int((g * (-1)) / 4))
             if c == g:
-                c -= rand.randint(1,10)
-            ex = Font(int(__SIZE[0]/(800/280)),int(__SIZE[1]/(600/130)), message=f'{a} + {b} < {c}')
+                c -= rand.randint(1, 10)
+            ex = Font(int(__SIZE[0] / (800 / 280)), int(__SIZE[1] / (600 / 130)), message=f'{a} + {b} < {c}')
         elif r == 4:
             a = rand.randint(1, 30)
             b = rand.randint(1, 20)
             g = a - b
             if g >= 0:
-                c = g - rand.randint(int(g/10),int(g/4))
+                c = g - rand.randint(int(g / 10), int(g / 4))
             else:
-                c = g - rand.randint(int((g*(-1)) / 10), int((g*(-1)) / 4))
+                c = g - rand.randint(int((g * (-1)) / 10), int((g * (-1)) / 4))
             if c == g:
-                c -= rand.randint(1,10)
-            ex = Font(int(__SIZE[0]/(800/280)),int(__SIZE[1]/(600/130)), message=f'{a} - {b} < {c}')
+                c -= rand.randint(1, 10)
+            ex = Font(int(__SIZE[0] / (800 / 280)), int(__SIZE[1] / (600 / 130)), message=f'{a} - {b} < {c}')
         elif r == 5:
             a = rand.randint(1, 30)
             b = rand.randint(1, 20)
             g = a + b
             if g >= 0:
-                c = g + rand.randint(int(g/10),int(g/4))
+                c = g + rand.randint(int(g / 10), int(g / 4))
             else:
-                c = g + rand.randint(int((g*(-1)) / 10), int((g*(-1)) / 4))
+                c = g + rand.randint(int((g * (-1)) / 10), int((g * (-1)) / 4))
             if c == g:
-                c += rand.randint(1,10)
-            ex = Font(int(__SIZE[0]/(800/280)),int(__SIZE[1]/(600/130)), message=f'{a} + {b} > {c}')
+                c += rand.randint(1, 10)
+            ex = Font(int(__SIZE[0] / (800 / 280)), int(__SIZE[1] / (600 / 130)), message=f'{a} + {b} > {c}')
         elif r == 6:
             a = rand.randint(1, 30)
             b = rand.randint(1, 20)
             g = a - b
             if g >= 0:
-                c = g + rand.randint(int(g/10),int(g/4))
+                c = g + rand.randint(int(g / 10), int(g / 4))
             else:
-                c = g + rand.randint(int((g*(-1)) / 10), int((g*(-1)) / 4))
+                c = g + rand.randint(int((g * (-1)) / 10), int((g * (-1)) / 4))
             if c == g:
-                c += rand.randint(1,10)
-            ex = Font(int(__SIZE[0]/(800/280)),int(__SIZE[1]/(600/130)), message=f'{a} - {b} > {c}')
+                c += rand.randint(1, 10)
+            ex = Font(int(__SIZE[0] / (800 / 280)), int(__SIZE[1] / (600 / 130)), message=f'{a} - {b} > {c}')
         return False, ex
 
 
@@ -2976,20 +3007,23 @@ def retry_eng():
     go = False
     h = 0
     button_yes = Button_rect(int(__SIZE[0] / 2 - (__SIZE[0] / 3)), int(__SIZE[1] / (800 / 300)), int(__SIZE[0] / 4),
-                                 int(__SIZE[1] / 6), (255, 206, 0), 'Yes',
-                                 font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
-                                 actived_color=MAIN_COLOR_FONT,
-                                 font_size=int(__SIZE[1] / (600/32)),
-                                 message_x=int(int(__SIZE[0] / 2 - (__SIZE[0] / 3) + __SIZE[0]/(800/68))),
-                                 message_y=int(__SIZE[1] / (800 / 340)), second_color=(255, 164, 0))
-    button_not = Button_rect(int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4), int(__SIZE[1] / (800 / 300)), int(__SIZE[0] / 4),
-                                 int(__SIZE[1] / 6), (255, 206, 0), 'No',
-                                 font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
-                                 actived_color=MAIN_COLOR_FONT,
-                                 font_size=int(__SIZE[1] / (600/32)),
-                                 message_x=int(int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4 + __SIZE[0]/(800/80))),
-                                 message_y=int(__SIZE[1] / (800 / 340)), second_color=(255, 164, 0))
-    quest = Font(int(__SIZE[0]/(800/100)),int(__SIZE[1]/(600/50)),COLOR_VERSION_SCORE,int(__SIZE[1]/(600/44)),message='Are you want retry?')
+                             int(__SIZE[1] / 6), (255, 206, 0), 'Yes',
+                             font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
+                             actived_color=MAIN_COLOR_FONT,
+                             font_size=int(__SIZE[1] / (600 / 32)),
+                             message_x=int(int(__SIZE[0] / 2 - (__SIZE[0] / 3) + __SIZE[0] / (800 / 68))),
+                             message_y=int(__SIZE[1] / (800 / 340)), second_color=(255, 164, 0))
+    button_not = Button_rect(int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4), int(__SIZE[1] / (800 / 300)),
+                             int(__SIZE[0] / 4),
+                             int(__SIZE[1] / 6), (255, 206, 0), 'No',
+                             font_type='/shrift/play_menu.otf', active_color=MAIN_COLOR_FONT,
+                             actived_color=MAIN_COLOR_FONT,
+                             font_size=int(__SIZE[1] / (600 / 32)),
+                             message_x=int(
+                                 int(__SIZE[0] / 2 + (__SIZE[0] / 3) - __SIZE[0] / 4 + __SIZE[0] / (800 / 80))),
+                             message_y=int(__SIZE[1] / (800 / 340)), second_color=(255, 164, 0))
+    quest = Font(int(__SIZE[0] / (800 / 100)), int(__SIZE[1] / (600 / 50)), COLOR_VERSION_SCORE,
+                 int(__SIZE[1] / (600 / 44)), message='Are you want retry?')
     while show_menu_retry:
         for event in pg.event.get():
             if event.type == pg.QUIT:
